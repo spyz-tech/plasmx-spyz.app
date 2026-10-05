@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>plasmx/spyz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Yuji+Boku&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Comic Neue', cursive, sans-serif;
+        background-color: #0b0f19;
+      }
+      h1, h2, h3, h4, .font-brush, .font-orbitron {
+        font-family: 'Permanent Marker', 'Yuji Boku', cursive, sans-serif;
+        letter-spacing: 0.04em;
+      }
+      .font-comic {
+        font-family: 'Bangers', cursive;
+        letter-spacing: 0.06em;
+      }
+      .font-comic-body {
+        font-family: 'Comic Neue', cursive, sans-serif;
+      }
+      .background-poster-container {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .background-poster {
+        position: absolute;
+        opacity: 0.07;
+        filter: blur(4px) grayscale(40%);
+        animation: wave-float 25s ease-in-out infinite;
+      }
+
+      /* Staggering the animation for a more random feel */
+      .background-poster:nth-child(1) { animation-delay: -2s; animation-duration: 25s; }
+      .background-poster:nth-child(2) { animation-delay: -5s; animation-duration: 30s; }
+      .background-poster:nth-child(3) { animation-delay: -8s; animation-duration: 22s; }
+      .background-poster:nth-child(4) { animation-delay: -11s; animation-duration: 28s; }
+      .background-poster:nth-child(5) { animation-delay: -14s; animation-duration: 26s; }
+      .background-poster:nth-child(6) { animation-delay: -1s; animation-duration: 32s; }
+
+      @keyframes wave-float {
+        0%, 100% {
+          transform: rotate(var(--rotation, 0deg)) translateY(0px);
+        }
+        50% {
+          transform: rotate(var(--rotation, 0deg)) translateY(15px);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
